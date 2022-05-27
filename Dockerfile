@@ -1,7 +1,11 @@
+# syntax=docker/dockerfile:1
+
 FROM golang:1.16-alpine
 
 # Set destination for COPY
 WORKDIR /app
+
+ENV GOPROXY=https://goproxy.cn,direct
 
 # Download Go modules
 COPY go.mod .
